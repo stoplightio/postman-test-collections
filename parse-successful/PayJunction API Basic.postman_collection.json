@@ -1,0 +1,2637 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PayJunction API Basic",
+		"_postman_id": "f15cd551-d713-f858-c417-f6ff59cabfd7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"description": "",
+			"item": [
+				{
+					"name": "/customers/",
+					"request": {
+						"url": {
+							"raw": "{{url}}/customers/?limit=50&offset=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Gets a list of 15 customers"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Retrieve a customer"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/",
+					"request": {
+						"url": "{{url}}/customers/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "companyName",
+									"value": "{{companyName}}",
+									"type": "text",
+									"description": "Text, Max Length 64"
+								},
+								{
+									"key": "custom1",
+									"value": "{{custom1}}",
+									"type": "text",
+									"description": "Text, Max Length 32"
+								},
+								{
+									"key": "email",
+									"value": "{{email}}",
+									"type": "text",
+									"description": "Email (1), Max Length 128"
+								},
+								{
+									"key": "identifier",
+									"value": "{{identifier}}",
+									"type": "text",
+									"description": "Text, Max Length 64"
+								},
+								{
+									"key": "firstName",
+									"value": "{{firstName}}",
+									"type": "text",
+									"description": "Text, Max Length 16"
+								},
+								{
+									"key": "lastName",
+									"value": "{{lastName}}",
+									"type": "text",
+									"description": "Text, Max Length 32"
+								},
+								{
+									"key": "middleName",
+									"value": "{{middleName}}",
+									"type": "text",
+									"description": "Text, Max Length 32"
+								},
+								{
+									"key": "jobTitle",
+									"value": "{{jobTitle}}",
+									"type": "text",
+									"description": "Text, Max Length 32"
+								},
+								{
+									"key": "phone",
+									"value": "{{phone}}",
+									"type": "text",
+									"description": "Phone Number, Max Length 24, Must contain at least 10 digits"
+								},
+								{
+									"key": "phone2",
+									"value": "{{phone2}}",
+									"type": "text",
+									"description": "Phone Number, Max Length 24, Must contain at least 10 digits"
+								},
+								{
+									"key": "website",
+									"value": "{{website}}",
+									"type": "text",
+									"description": "Text, Max Length 128"
+								}
+							]
+						},
+						"description": "Add a new customer"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "companyName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "custom1",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "identifier",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "middleName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "jobTitle",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "website",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "defaultAddressId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update a customer"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Delete a customer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Notes",
+			"description": "",
+			"item": [
+				{
+					"name": "/customers/{customerId}/notes",
+					"request": {
+						"url": {
+							"raw": "{{url}}/customers/{{customerId}}/notes?limit=15&offset=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers",
+								"{{customerId}}",
+								"notes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get Customer Notes"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/notes/{noteId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/notes/{{noteId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get a customer note by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/notes",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/notes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "note",
+									"value": "{{note}}",
+									"type": "text",
+									"description": "Max Length 2048"
+								}
+							]
+						},
+						"description": "Add a new customer note"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/notes/{noteId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/notes/{{noteId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "note",
+									"value": "{{note}}",
+									"type": "text",
+									"description": "Max Length 2048"
+								}
+							]
+						},
+						"description": "Update an existing customer note"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/notes/{noteId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/notes/{{noteId}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Delete a customer note"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Vaults",
+			"description": "",
+			"item": [
+				{
+					"name": "/customers/{customerId}/vaults/",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Retrieve customer's payment vaults"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/vaults/{vaultId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults/{{vaultId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get a payment vault by id"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/vaults (ACH)",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "achRoutingNumber",
+									"value": "{{achRouting}}",
+									"type": "text",
+									"description": "ABA Routing Number"
+								},
+								{
+									"key": "achAccountNumber",
+									"value": "{{achAccount}}",
+									"type": "text",
+									"description": "[0-9]{,17}"
+								},
+								{
+									"key": "achAccountType",
+									"value": "{{achAccountType}}",
+									"type": "text",
+									"description": "CHECKING, SAVINGS"
+								},
+								{
+									"key": "achType",
+									"value": "{{achType}}",
+									"type": "text",
+									"description": "CCD, PPD, TEL, WEB"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "addressId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Add a new customer ACH payment vault"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/vaults (CARD)",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cardNumber",
+									"value": "{{cardAccount}}",
+									"type": "text",
+									"description": "5105105105105100,\n5105-1051-0510-5100,\n5105 1051 0510 5100"
+								},
+								{
+									"key": "cardExpMonth",
+									"value": "{{cardMonth}}",
+									"type": "text",
+									"description": "1-12"
+								},
+								{
+									"key": "cardExpYear",
+									"value": "{{cardYear}}",
+									"type": "text",
+									"description": "YYYY, YY"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "addressId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Add a new customer CARD payment vault"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/vaults/{vaultId} (ACH)",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults/{{achVault}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "achAccountType",
+									"value": "{{achAccountType}}",
+									"type": "text",
+									"description": "CHECKING, SAVINGS"
+								},
+								{
+									"key": "achType",
+									"value": "{{achType}}",
+									"type": "text",
+									"description": "CCD, PPD, TEL, WEB"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "addressId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update ACH payment vault"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/vaults/{vaultId} (CARD)",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults/{{cardVault}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cardExpMonth",
+									"value": "{{cardMonth}}",
+									"type": "text",
+									"description": "1-12"
+								},
+								{
+									"key": "cardExpYear",
+									"value": "{{cardYear}}",
+									"type": "text",
+									"description": "YYYY, YY"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "addressId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update CARD payment vault"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/vaults/{vaultId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/vaults/{{vaultId}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Delete a payment vault"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Addresses",
+			"description": "",
+			"item": [
+				{
+					"name": "/customers/{customerId}/addresses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var results = jsonData.results;",
+									"first_addressId = results[0].addressId;",
+									"postman.setEnvironmentVariable(\"addressId\", first_addressId);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/addresses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							},
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Gets a list of a customer's addresses."
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/addresses/{addressId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/addresses/{{addressId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get a customer address by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/addresses/",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/addresses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "{{address}}",
+									"type": "text",
+									"description": "Text, Max Length 128"
+								},
+								{
+									"key": "city",
+									"value": "{{city}}",
+									"type": "text",
+									"description": "Text, Max Length 32\t"
+								},
+								{
+									"key": "state",
+									"value": "{{state}}",
+									"type": "text",
+									"description": "Text, Max Length 32\t"
+								},
+								{
+									"key": "country",
+									"value": "{{country}}",
+									"type": "text",
+									"description": "Text, Max Length 32\t"
+								},
+								{
+									"key": "zip",
+									"value": "{{zip}}",
+									"type": "text",
+									"description": "Text, Max Length 16"
+								}
+							]
+						},
+						"description": "Add a new address to a customer"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/addresses/{addressId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/addresses/{{addressId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update existing customer address"
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/{customerId}/addresses/{addressId}",
+					"request": {
+						"url": "{{url}}/customers/{{customerId}}/addresses/{{addressId}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Delete a customer address by ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"description": "",
+			"item": [
+				{
+					"name": "/transactions/ (ACH)",
+					"request": {
+						"url": "{{url}}/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "achRoutingNumber",
+									"value": "{{achRouting}}",
+									"type": "text",
+									"description": "Valid Check Routing Number"
+								},
+								{
+									"key": "achAccountNumber",
+									"value": "{{achAccount}}",
+									"type": "text",
+									"description": "Valid Check Account Number, Max Length 17"
+								},
+								{
+									"key": "achAccountType",
+									"value": "{{achAccountType}}",
+									"type": "text",
+									"description": "SAVINGS | CHECKING"
+								},
+								{
+									"key": "achType",
+									"value": "{{achType}}",
+									"type": "text",
+									"description": "PPD | CCD | TEL"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text",
+									"description": "CHARGE | REFUND"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text",
+									"description": "Max Length 16"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text",
+									"description": "Max Length 32\t"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text",
+									"description": "Max Length 64"
+								}
+							]
+						},
+						"description": "Simple Keyed Transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/ (Keyed CC)",
+					"request": {
+						"url": "{{url}}/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cardNumber",
+									"value": "{{cardAccount}}",
+									"type": "text"
+								},
+								{
+									"key": "cardExpMonth",
+									"value": "{{cardMonth}}",
+									"type": "text"
+								},
+								{
+									"key": "cardExpYear",
+									"value": "{{cardYear}}",
+									"type": "text"
+								},
+								{
+									"key": "cardCvv",
+									"value": "{{cardCvv}}",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingAddress",
+									"value": "1903 state st",
+									"type": "text"
+								},
+								{
+									"key": "billingCity",
+									"value": "santa barbara",
+									"type": "text"
+								},
+								{
+									"key": "billingState",
+									"value": "ca",
+									"type": "text"
+								},
+								{
+									"key": "shippingAddress",
+									"value": "1901 state st",
+									"type": "text"
+								},
+								{
+									"key": "shippingCity",
+									"value": "santa barbara",
+									"type": "text"
+								},
+								{
+									"key": "shippingState",
+									"value": "ca",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Simple Keyed Transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/ (all fields)",
+					"request": {
+						"url": "{{url}}/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "achRoutingNumber",
+									"value": "{{achRouting}}",
+									"type": "text",
+									"description": "Valid Check Routing Number"
+								},
+								{
+									"key": "achAccountNumber",
+									"value": "{{achAccount}}",
+									"type": "text",
+									"description": "Valid Check Account Number, Max Length 17"
+								},
+								{
+									"key": "achAccountType",
+									"value": "{{achAccountType}}",
+									"type": "text",
+									"description": "SAVINGS | CHECKING"
+								},
+								{
+									"key": "achType",
+									"value": "{{achType}}",
+									"type": "text",
+									"description": "PPD | CCD | TEL"
+								},
+								{
+									"key": "cardNumber",
+									"value": "{{cardAccount}}",
+									"type": "text",
+									"description": "Valid Credit Card Number."
+								},
+								{
+									"key": "cardExpMonth",
+									"value": "{{cardMonth}}",
+									"type": "text",
+									"description": "1-12, Ex: 8"
+								},
+								{
+									"key": "cardExpYear",
+									"value": "{{cardYear}}",
+									"type": "text",
+									"description": "4 Digit Format. Ex: 2015"
+								},
+								{
+									"key": "cardCvv",
+									"value": "{{cardCvv}}",
+									"type": "text",
+									"description": "Valid CVV. Max Length 4"
+								},
+								{
+									"key": "action",
+									"value": "{{action}}",
+									"type": "text",
+									"description": "CHARGE | REFUND"
+								},
+								{
+									"key": "amountBase",
+									"value": "{{amountBase}}",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "amountShipping",
+									"value": "{{amountShipping}}",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "amountTip",
+									"value": "{{amountTip}}",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "amountReject",
+									"value": "{{amountReject}}",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "amountTax",
+									"value": "{{amountTax}}",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "amountSurcharge",
+									"value": "{{amountSurcharge}}",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nEx: 1000.00 or $1,000.00"
+								},
+								{
+									"key": "invoiceNumber",
+									"value": "{{invoiceNumber}}",
+									"type": "text",
+									"description": "Max Length 32"
+								},
+								{
+									"key": "purchaseOrderNumber",
+									"value": "{{purchaseOrderNumber}}",
+									"type": "text",
+									"description": "Max Length 32"
+								},
+								{
+									"key": "note",
+									"value": "{{note}}",
+									"type": "text",
+									"description": "Max Length 2048"
+								},
+								{
+									"key": "avs",
+									"value": "{{avs}}",
+									"type": "text",
+									"description": "ADDRESS\nZIP\nADDRESS_AND_ZIP\nADDRESS_OR_ZIP\nBYPASS\nOFF"
+								},
+								{
+									"key": "cvv",
+									"value": "{{cvv}}",
+									"type": "text",
+									"description": "ON | OFF"
+								},
+								{
+									"key": "billingIdentifier",
+									"value": "{{billingIdentifier}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingFirstName",
+									"value": "{{billingFirstName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingMiddleName",
+									"value": "{{billingMiddleName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingLastName",
+									"value": "{{billingLastName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "{{billingCompanyName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingJobTitle",
+									"value": "{{billingJobTitle}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingPhone",
+									"value": "{{billingPhone}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingPhone2",
+									"value": "{{billingPhone2}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingAddress",
+									"value": "{{billingAddress}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingCity",
+									"value": "{{billingCity}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingState",
+									"value": "{{billingState}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingZip",
+									"value": "{{billingZip}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingCountry",
+									"value": "{{billingCountry}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingEmail",
+									"value": "{{billingEmail}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "billingWebsite",
+									"value": "{{billingWebsite}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingIdentifier",
+									"value": "{{shippingIdentifier}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingFirstName",
+									"value": "{{shippingFirstName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingMiddleName",
+									"value": "{{shippingMiddleName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingLastName",
+									"value": "{{shippingLastName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingCompanyName",
+									"value": "{{shippingCompanyName}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingJobTitle",
+									"value": "{{shippingJobTitle}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingPhone",
+									"value": "{{shippingPhone}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingPhone2",
+									"value": "{{shippingPhone}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingAddress",
+									"value": "{{shippingAddress}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingCity",
+									"value": "{{shippingCity}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingState",
+									"value": "{{shippingState}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingZip",
+									"value": "{{shippingZip}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingCountry",
+									"value": "{{shippingCountry}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingEmail",
+									"value": "{{shippingEmail}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "shippingWebsite",
+									"value": "{{shippingWebsite}}",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": "Simple Keyed Transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/ (Recharge Trans)",
+					"request": {
+						"url": "{{url}}/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "transactionId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Simple Keyed Transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/ (Recharge Vault)",
+					"request": {
+						"url": "{{url}}/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "vaultId",
+									"value": "{{vaultId}}",
+									"type": "text"
+								},
+								{
+									"key": "achtype",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Simple Keyed Transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/ (Swiped CC)",
+					"request": {
+						"url": "{{url}}/transactions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cardTrack",
+									"value": "{{cardTrack}}",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Simple Swiped Transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/",
+					"request": {
+						"url": "{{url}}/transactions/?limit=15&offset=0",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Not Available At Time at Time of Publishing this collection: Get a list of transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "70ef7234-c45d-472b-92b8-e8f494901a84",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic cGotcWwtMDE6cGotcWwtMDFw",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "amountShipping",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "amountTip",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "amountReject",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "amountTax",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update an unsettled transaction"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Notes",
+			"description": "",
+			"item": [
+				{
+					"name": "/transactions/{transactionId}/notes",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/notes?limit=15&offset=0",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get a list of notes for a transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/notes/{noteId}",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/notes/{noteId}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get a note for a transaction by Id"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/notes/",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/notes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "note",
+									"value": "This transaction made us a lot of money!",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Add a note to a transaction."
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/notes/{noteId}",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/notes/{noteId}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "note",
+									"value": "This transaction needs an updated note.",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update a transaction note."
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/notes/{noteId}",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/notes/{noteId}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Delete a transaction note."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receipts & Signatures",
+			"description": "",
+			"item": [
+				{
+					"name": "/transactions/{transactionId}/signature/capture",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/signature/capture",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "signature",
+									"value": "{{sigCapData}}",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Capture a signature using the scriptel signature capture"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/latest/email",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/latest/email",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "{{toEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "replyTo",
+									"value": "{{replyToEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "requestSignature",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Request a Signature via e-mail"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get all of the signed receipts for a transaction."
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{{transactionId}}/receipts/latest",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/latest",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Retrieve the most recent version of the receipt."
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/latest/thermal",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/latest/thermal",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get the most recent version of the thermal receipt HTML Document"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/latest/fullpage",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/latest/fullpage",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get the most recent version of the full page (8.5x11) receipt HTML document"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/unsigned",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/unsigned",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get the URIs to the different unsigned receipts"
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/unsigned/thermal",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/unsigned/thermal",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/unsigned/fullpage",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipts/unsigned/fullpage",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get an unsigned full page receipt HTML document."
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/{transactionId}/receipts/{receiptId}",
+					"request": {
+						"url": "{{url}}/transactions/{{transactionId}}/receipt/{{receiptId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get a single signed receipt by Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Webhooks",
+			"description": "The webhook is for notifiaction of asynchronous events.\n\nThe webhook events that will be posted. SMARTTERMINAL_TRANSACTION is sent on any completed transaction performed via the Smart Terminal. TRANSACTION_SIGNATURE is sent whenever a transaction is signed. Both will be received regardless of whether the transaction was initiated via the API or another service.",
+			"item": [
+				{
+					"name": "/webhooks/",
+					"request": {
+						"url": "{{url}}/webhooks",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Gets a list of webhooks"
+					},
+					"response": []
+				},
+				{
+					"name": "/webhooks/{webhookId}",
+					"request": {
+						"url": "{{url}}/webhooks/{{webhookId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "url",
+									"value": "",
+									"type": "text",
+									"description": "Text, URL with max length 255. URL cannot contain a port and must be HTTPS.  The url that webhook events will be posted to.\n\nFor testing and initial development, HTTP URLs from http://requestcatcher.com/ can be used."
+								},
+								{
+									"key": "secret",
+									"value": "",
+									"type": "text",
+									"description": "Text, max length 255.  If set, All webhooks sent will include a \"X-Pj-Signature\" header with the post. The value of the header is a HMAC hash of the entire json payload using the SHA 256 algorithm, using the secret as the secret key.\n\nSetting secret to an empty string will clear the secret. Future payloads will not be hashed."
+								}
+							]
+						},
+						"description": "edit a webhook."
+					},
+					"response": []
+				},
+				{
+					"name": "/webhooks/{webhooks}",
+					"request": {
+						"url": {
+							"raw": "{{url}}/webhooks/?event=SMARTTERMINAL_TRANSACTION",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"webhooks",
+								""
+							],
+							"query": [
+								{
+									"key": "event",
+									"value": "SMARTTERMINAL_TRANSACTION",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "event",
+									"value": "",
+									"type": "text",
+									"description": "SMARTTERMINAL_TRANSACTION | \nTRANSACTION_SIGNATURE  \n\nThe webhook events that will be posted. SMARTTERMINAL_TRANSACTION is sent on any completed transaction performed via the Smart Terminal. TRANSACTION_SIGNATURE is sent whenever a transaction is signed. Both will be received regardless of whether the transaction was initiated via the API or another service."
+								},
+								{
+									"key": "url",
+									"value": "",
+									"type": "text",
+									"description": "Text, URL with max length 255. URL cannot contain a port and must be HTTPS.\n\nThe URL that webhook events will be posted to.\n\nFor testing and initial development, HTTP URLs from http://requestcatcher.com/ can be used."
+								},
+								{
+									"key": "secret",
+									"value": "",
+									"type": "text",
+									"description": "Text, max length 255.\n\nIf set, All webhooks sent will include a \"X-Pj-Signature\" header with the post. The value of the header is a HMAC hash of the entire json payload using the SHA 256 algorithm, using the secret as the secret key."
+								}
+							]
+						},
+						"description": "Add a webhook."
+					},
+					"response": []
+				},
+				{
+					"name": "/webhooks/{webhookId}",
+					"request": {
+						"url": "{{url}}/webhooks/{{webhookId}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Delete a webhook"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Terminals",
+			"description": " merchant account terminal that the transaction will be processed on",
+			"item": [
+				{
+					"name": "/terminals",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Response time is less than 400ms\"] = responseTime < 200;",
+									"",
+									"tests[\"Body matches string\"] = responseBody.has(\"terminalId\");",
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"terminalId\"] = jsonData.terminalId === 162415;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/terminals",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "vaultId",
+									"value": "{{vaultId}}",
+									"type": "text"
+								},
+								{
+									"key": "achtype",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Get a list of Terminal Id's for an account."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SmartTerminal",
+			"description": "Our Smart Terminal API will limit your PCI scope so you can focus on what you’re best at - building software, we handle the rest.",
+			"item": [
+				{
+					"name": "/smartterminals/{smartTerminald}/request-payment",
+					"request": {
+						"url": {
+							"raw": "{{url}}/smartterminals/{{smartTerminaIId}}/request-payment?amountBase={{amountBase}}&terminalId={{terminalId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"smartterminals",
+								"{{smartTerminaIId}}",
+								"request-payment"
+							],
+							"query": [
+								{
+									"key": "invoiceNumber",
+									"value": "{{invoiceNumber}}",
+									"equals": false,
+									"description": "An invoice number to include in the transaction details.",
+									"disabled": true
+								},
+								{
+									"key": "amountBase",
+									"value": "{{amountBase}}",
+									"equals": true,
+									"description": "Required: Money, Format: X.XX\nGood: 1000.00 or 1000\nBad: $1000 or 1,000.00 or 1000.000Base amount to charge (in dollars)."
+								},
+								{
+									"key": "terminalId",
+									"value": "{{terminalId}}",
+									"equals": true,
+									"description": "Required: This field points to the specific merchant account terminal that the transaction will be processed on. For example: main location, second location, sales department, etc. Click Here for instructions to find the Terminal Id(s) for your account."
+								},
+								{
+									"key": "showReceiptPrompt",
+									"value": "{{showReceiptPrompt}}",
+									"equals": true,
+									"description": "true - Displays the receipt prompt.\nfalse - Disables the receipt prompt.\n\n* Default value is true if a parameter is not sent.",
+									"disabled": true
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "terminalId",
+									"value": "{{terminalId}}",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text",
+									"description": "Money,\nFormat: X.XX\nGood: 1000.00 or 1000\nBad: $1000 or 1,000.00 or 1000.000"
+								},
+								{
+									"key": "invoiceNumber",
+									"value": "",
+									"type": "text",
+									"description": "Numeric\nAn invoice number to include in the transaction details."
+								},
+								{
+									"key": "showReceiptPrompt",
+									"value": "",
+									"description": "true | false\n\ntrue - Displays the receipt prompt.\nfalse - Disables the receipt prompt.\n\n* Default value is true if a parameter is not sent.",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Initiate a Smart Terminal Payment"
+					},
+					"response": []
+				},
+				{
+					"name": "/smartterminals/{smartTerminald}/main",
+					"request": {
+						"url": "{{url}}/smartterminals/{{smartTerminaIId}}/main",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Returns the Smart Terminal to the main \"Smart Terminal by PayJunction\" screen to await a new transaction request. \n\nFor instance, this request can be used when a user decides to cancel a Smart Terminal payment request. When this request is sent, the Smart Terminal will return to the main screen that reads \"Smart Terminal by PayJunction\", preventing the customer from making a payment.\n\nNote: If the customer has already inserted the chip card, or swiped the card, then the transaction is already processed and it is too late to cancel the payment request. In this case, the transaction should be voided instead."
+					},
+					"response": []
+				},
+				{
+					"name": "/smartterminals",
+					"request": {
+						"url": "{{url}}/smartterminals",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "vaultId",
+									"value": "{{vaultId}}",
+									"type": "text"
+								},
+								{
+									"key": "achtype",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Get a list of Smart Terminals for an account"
+					},
+					"response": []
+				},
+				{
+					"name": "/smartterminals/requests/{{requestPaymentId}}",
+					"request": {
+						"url": "{{url}}/smartterminals/requests/{{requestPaymentId}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-PJ-Application-Key",
+								"value": "{{appkey}}",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "vaultId",
+									"value": "{{vaultId}}",
+									"type": "text"
+								},
+								{
+									"key": "achtype",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "CHARGE",
+									"type": "text"
+								},
+								{
+									"key": "amountBase",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingFirstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingLastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "billingCompanyName",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Gets the status of a Smart Terminal payment request by querying the requestPaymentId returned by POST /smartterminals/{smartterminalId}/request-payment\n\nThe status of a payment request can be queried up to 1 day after the Smart Terminal payment request has been completed. After this cut off the requestPaymentId is purged and will return a 404 Not Found when queried. \n\nIn order to discourage busy polling, requests to this endpoint are rate limited to 1 request every 2 seconds per request."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
